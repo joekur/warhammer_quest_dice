@@ -1,3 +1,19 @@
+// shims / helpers
+Object.values = function(obj) {
+  var vals = [];
+  for (var key in obj) {
+    vals.push(obj[key]);
+  }
+  return vals;
+}
+
+function range(start, count) {
+  return Array.apply(0, Array(count))
+    .map(function (element, index) {
+    return index + start;
+  });
+}
+
 // probability a single die rolls x
 function probDie(x) {
   if (x === 0) {
@@ -47,6 +63,8 @@ function possibilities(dice, sum) {
   return result;
 }
 
+// returns list of objects, eg:
+//  [{count: 3, combination: [0,0,3]}, ...]
 function possibilitiesByCount(dice, sum) {
   let allPossibilities = possibilities(dice, sum);
   let result = {};
@@ -69,21 +87,19 @@ function probDiceAtLeast(dice, sum) {
   return result;
 }
 
-function range(start, count) {
-  return Array.apply(0, Array(count))
-    .map(function (element, index) {
-    return index + start;
-  });
-}
-
 let $diceInput = $('input[name="dice"]');
 let $sumInput = $('input[name="sum"]');
 let $submit = $('#submit');
 let $result = $('#result');
 let $result_explanation = $('#result_explanation');
 
-$submit.on('click touchend', function() {
+$submit.on('click', function() {
   let dice = parseInt($diceInput.val());
   let sum = parseInt($sumInput.val());
-  $result.text((probDiceAtLeast(dice, sum) * 100).toFixed(1) + '%');
+  try {
+    $result.text((probDiceAtLeast(dice, sum) * 100).toFixed(1) + '%');
+  }
+  catch(e) {
+    alert(e.message);
+  }
 });
