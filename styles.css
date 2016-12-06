@@ -18,17 +18,19 @@ body {
   max-width: 300px;
   margin: 40px auto;
 }
-#submit {
-  margin: 10px auto;
-  display: block;
+.btn {
+  text-decoration: none;
   padding: 14px 10px;
   background: #eee;
   border: 1px solid #ccc;
+  color: inherit;
+}
+#submit {
+  margin: 10px auto;
+  display: block;
   width: 100%;
   font-size: 14px;
-}
-#submit:hover {
-  cursor: pointer;
+  text-align: center;
 }
 input {
   padding: 20px 10px;
