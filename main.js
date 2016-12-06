@@ -82,7 +82,7 @@ let $submit = $('#submit');
 let $result = $('#result');
 let $result_explanation = $('#result_explanation');
 
-$submit.click(function() {
+$submit.on('click touchend', function() {
   let dice = parseInt($diceInput.val());
   let sum = parseInt($sumInput.val());
   $result.text((probDiceAtLeast(dice, sum) * 100).toFixed(1) + '%');
