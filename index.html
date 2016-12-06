@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Warhammer Dice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="styles.css" media="all" rel="stylesheet">
+  </head>
+  <body>
+    <div class="inputs">
+      <div class="row">
+        <div class="half">
+          <label for="dice"># Dice</label>
+          <input type="text" name="dice" />
+        </div>
+        <div class="half">
+          <label for="sum">Hits Needed</label>
+          <input type="text" name="sum" />
+        </div>
+      </div>
+
+      <button id="submit">Calculate</button>
+    </div>
+
+
+    <div id="result"></div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

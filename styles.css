@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Helvetica;
+  background: #f3f5f6;
+}
+.half {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+.row {
+  overflow: auto;
+  margin: 0 -10px;
+}
+.inputs {
+  max-width: 300px;
+  margin: 40px auto;
+}
+#submit {
+  margin: 10px auto;
+  display: block;
+  padding: 14px 10px;
+  background: #eee;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 14px;
+}
+#submit:hover {
+  cursor: pointer;
+}
+input {
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 24px;
+  width: 100%;
+}
+#result {
+  margin: 0 auto;
+  font-size: 30px;
+  text-align: center;
+}
